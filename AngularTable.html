@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="ngApp" ng-controller="tableController">
+    <script>
+        var app = angular.module("ngApp", []);
+        app.controller("tableController", function ($scope) {
+            $scope.countries = [
+                { "name": "China", pop: 1234567890 },
+                { "name": "India", pop: 123456789 },
+                { "name": "USA", pop: 2345678 }
+            ];
+
+        });
+    </script>
+
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+        </tr>
+        <tr ng-repeat="country in countries">
+            <td>{{country.name}}</td>
+            <td>{{country.pop}}</td>
+        </tr>
+    </table>
+</body>
+</html>

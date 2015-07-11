@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <script>
+        var app = angular.module("myApp", ['ngRoute']);
+
+        app.config(function ($routeProvider) {
+            $routeProvider.
+                when("/",
+                    {
+                        templateUrl: "CustomerList.html",
+                        controller: 'customerController'
+                    }).
+                when("/:customerName", {
+                    templateUrl: "CustomerDetailView.html",
+                    controller: 'customerDetailController'
+                }).
+                otherwise({redirectTo:"/"});
+
+        });
+
+        app.controller("customerController", function ($scope, $http) {
+            $http.get("http://www.w3schools.com/angular/customers.php").success(function (data) {
+                $scope.customers = data.records;
+            });
+           
+        });
+
+        app.controller("customerDetailController", function ($scope, $routeParams) {
+            $scope.name = $routeParams.customerName;
+        });
+
+    </script>
+
+    <div ng-view>
+
+    </div>
+</body>
+</html>

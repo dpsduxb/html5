@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        //Different ways of Creating objects
+
+        // 1) Using {} braces
+
+        var student = { studentId: "1", studentName: "Govardhan", collegeName: "", qual: "" };
+
+        // 2) Using new keyword
+        var student = new Object();
+        student.studentId = "1";
+        student.studentName = "hdfslhyfds";
+
+        // 3) Using constructor
+        function student2(studentId, studentName, collegeName, qual) {
+            this.studentId = studentId;
+            this.studentName = studentName;
+            this.collegeName = collegeName;
+            this.qual = qual;
+        }
+
+        var student = new student2("1", "dsafsf", "sasaf", "aswg");
+
+        //3) second approach
+        function student1() {
+
+        }
+
+        var student = new student1();
+        student.studentId = "1";
+        student.studentName = "hdfslhyfds";
+    </script>
+</body>
+</html>

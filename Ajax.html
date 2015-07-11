@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function(){
+            if (xmlHttp.readyState == 4) {
+                contentDiv.innerHTML = xmlHttp.responseText;
+            }
+        }
+        xmlHttp.open("GET", "https://www.google.co.in/?gfe_rd=cr&ei=U6KYVdGyFKeW8Qfog4GQAQ#q=html5", true);
+        xmlHttp.send();
+        
+    </script>
+
+    <div id="contentDiv">
+
+    </div>
+</body>
+</html>

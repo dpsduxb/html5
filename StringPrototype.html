@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <p>Word count is: <span id="demo"></span></p>
+    <p>Reversed String is: <span id="demo1"></span></p>
+    <script>
+        var userName = "this is for testing prototype property";
+
+        //Inheriting String class with wordCount method.
+        String.prototype.wordCount = function () {
+            var wordCount = 0;
+            //Here this means the object which calls the word count method.
+            return this.split(" ").length;
+        }
+
+        String.prototype.reverse = function () {
+            var revString = "";
+            for (var i = this.length - 1; i >= 0; i--) {
+                revString += this[i];
+            }
+            return revString;
+        }
+
+        String.prototype.newPro = "";
+
+        document.getElementById("demo").innerHTML = userName.wordCount();
+        var userName1 = "Lux";
+
+        document.getElementById("demo1").innerHTML = userName1.reverse();
+        userName1.newPro = "";
+        
+    </script>
+</body>
+</html>

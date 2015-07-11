@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        var name = "This is my string object";
+        
+        document.getElementById("demo").innerHTML = name.length;
+        document.getElementById("demo").innerHTML = Number(document.getElementById("demo").innerHTML) + Number(name.lastIndexOf("isa"));
+
+        var fSize = "120px";
+        
+        document.getElementById("demo").innerHTML = Number(fSize.substring(0, fSize.indexOf("px"))) + 1 + "px";
+        //fSize.indexOf("px")
+        
+    </script>
+
+</body>
+</html>

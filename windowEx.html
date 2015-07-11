@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" onclick="openURL()" value="OpenURL" />
+    <input type="button" onclick="closeURL()" value="Close" />
+    <input type="button" onclick="moveToLo()" value="moveTO" />
+    <input type="button" onclick="resizeToPos()" value="resizeTo" />
+
+    <script>
+        var myWindow;
+        function openURL() {
+            myWindow = window.open("http://www.w3schools.com/js/js_window.asp", "_blank");
+        }
+        function closeURL() {
+            window.close();
+        }
+
+        function moveToLo() {
+            myWindow.moveTo(500, 100);
+        }
+
+        function resizeToPos() {
+            myWindow.resizeTo(500, 500);
+        }
+    </script>
+</body>
+</html>

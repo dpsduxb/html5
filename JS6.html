@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button value="B" onclick="convertToBold()">B</button>
+
+    <p id="demo">Convert</p>
+
+    <script>
+        var isFirstTime = false; //It will be executed or created only once during the page load, it will be destroyed after page close.
+        function convertToBold() {
+            //var isFirstTime = false; This variable will be created every time method is executed, this variable is destroyed once the method
+            //execution is finished.
+
+            isFirstTime = !isFirstTime;
+
+            if (isFirstTime) {
+                document.getElementById("demo").style.fontWeight = "bold";
+            } else {
+                document.getElementById("demo").style.fontWeight = "normal";
+            }
+            
+        }
+    </script>
+</body>
+</html>

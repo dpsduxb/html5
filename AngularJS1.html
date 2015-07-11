@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="userName='Uma Maheswara Reddy';quantity=1;cost=5">
+    <input type="text" ng-model="userName" />
+
+    <p>Display{{userName}}</p>
+
+    <p ng-bind="userName"></p>
+
+    <p>Total in dollars: ${{quantity*cost}}</p>
+
+    <p>Total in dollars: $<span ng-bind="quantity*cost"></span></p>
+
+    <div ng-init="firstName='John';lastName='Doe'">
+        <p>The name is {{firstName + " " + lastName}}</p>
+        <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+    </div>
+
+    <div ng-init="person={firstName:'Uma',lastName:'Bandi'}">
+        <p>The Last Name is: {{person.lastName}}</p>
+    </div>
+
+    <div ng-init="points=[1,15,19,2,40]">
+        <p>The third point is: {{points[2]}}</p>
+        <p>The third Point is: <span ng-bind="points[3]"></span></p>
+
+        <ul>
+            <li ng-repeat="p in points">
+                {{p}}
+            </li>
+        </ul>
+    </div>
+    <div ng-init="names=[
+                        {name:'Jani',country:'Norway'},
+                        {name:'Hege',country:'Sweden'},
+                        {name:'Kai',country:'Denmark'}]">
+        <ul>
+            <li ng-repeat="name in names">
+                {{name.name + " " +name.country}}
+            </li>
+        </ul>
+
+        <table style="border:1px solid blue">
+            <tr style="border:1px dotted blue" ng-repeat="name in names">
+                <td style="border:1px dotted blue">{{name.name}}</td>
+                <td style="border:1px dotted blue">{{name.country}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

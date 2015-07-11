@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p id="demo" class="errorField">Paragraph1</p>
+    <p class="errorField">Paragraph2</p>
+    <p>Paragraph3</p>
+
+    <a>Test</a>
+    <script>
+        document.getElementById("demo").style.fontSize = "30px";
+
+        for(var i=0; i< document.getElementsByClassName("errorField").length; i++){
+            document.getElementsByClassName("errorField")[i].style.color = "red";
+        }
+
+        for (var j = 0; j < document.getElementsByTagName("p").length; j++) {
+            document.getElementsByTagName("p")[j].style.backgroundColor = "blue";
+        }
+
+        //document.get
+    </script>
+</body>
+</html>

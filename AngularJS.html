@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="">
+    <input type="text" ng-model="userName" />
+    <p ng-bind="userName"></p>
+
+    <div ng-init="firstName='Uma'">
+        <h1 ng-bind="firstName"></h1>
+    </div>
+
+    <select ng-model="fontValue">
+        <option>10px</option>
+        <option>12px</option>
+        <option>14px</option>
+        <option>16px</option>
+        <option>20px</option>
+        <option>32px</option>
+    </select>
+    <input type="color" ng-model="fontColor"/>
+    <input style="font-size:{{fontValue}};color:{{fontColor}}"/>
+
+    <select ng-model="ulValue">
+        <option>none</option>
+        <option>circle</option>
+        <option>square</option>
+        <option>disc</option>
+    </select>
+    <ul style="list-style-type:{{ulValue}}">
+        <li>Idli</li>
+        <li>Dosa</li>
+        <li>Vada</li>
+        <li>Pongal</li>
+    </ul>
+</body>
+
+</html>

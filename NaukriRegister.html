@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th id="emailLabel">Enter your email Id:*</th>
+            <td><input type="text" id="emailId" onfocusOut="focusOutMethod()"/> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Please register using your current email address.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span style="color:red;display:none" id="errorField">Please specify your email ID.</span></td>
+        </tr>
+    </table>
+
+    <script src="">
+        function focusOutMethod() {
+            if (emailId.value == "") {
+                emailId.style.backgroundColor = "red";
+                errorField.style.display = "inline";
+                emailLabel.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

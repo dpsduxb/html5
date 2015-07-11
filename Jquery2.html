@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    
+    <input id="emailLabel" type="button" value="Toggle" />
+
+    <p>This is paragraph</p>
+    <p>This is paragraph</p>
+    <p>This is paragraph</p>
+    <p>This is paragraph</p>
+    <script>
+       
+        $("#emailLabel").click(toggleHandler);
+       
+        function toggleHandler() {
+            var userName = $("#emailLabel").val();
+            $("p").toggle();
+        }
+    </script>
+</body>
+</html>

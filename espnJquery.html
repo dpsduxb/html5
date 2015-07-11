@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                method: "GET",
+                url: "http://www.espncricinfo.com/ci/engine/match/872483.json?xhr=1",
+                dataType: "jsonp",
+                success: function (responseText) {
+                    $("div").html(responseText.description);
+                    $("ul").append(responseText.match_card);
+                }
+            });
+
+        });
+    </script>
+    
+    <div style="font-size:24px;color:blue;font-weight:bolder"></div>
+    
+    <ul style="list-style-type:none">
+
+    </ul>
+
+    <div ng-app="" ng-controller="httpController">
+        <h1 style="color:blue;font-weight:bolder">{{names}}</h1>
+        <script>
+
+            function httpController($scope, $http) {
+                $http.jsonp("http://www.espncricinfo.com/ci/engine/match/872483.json?xhr=1").success(function (response) {
+                    $scope.names = response.description;
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

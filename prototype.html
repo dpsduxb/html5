@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function Employee(empId, empName, emailId, companyName) {
+            this.empId = empId;
+            this.empName = empName;
+            this.emailId = emailId;
+            this.companyName = companyName;
+        }
+
+        function PermanentEmployee(empId, empName, emailId, companyName) {
+            this.empId = empId;
+            this.empName = empName;
+            this.emailId = emailId;
+            this.companyName = companyName;
+        }
+
+        function ContractEmployee(empId, empName, emailId, companyName, contractCompany) {
+            this.empId = empId;
+            this.empName = empName;
+            this.emailId = emailId;
+            this.companyName = companyName;
+            this.contractCompany = contractCompany;
+        }
+
+        //Team Members, Team Lead, Manager, PL, CEO, COO,
+        Employee.prototype.cotractCompany = "CTS";
+
+        var empl1 = new Employee("1","Uma","uma@adobe.com","Adobe");
+        var empl2 = new Employee("2", "Lakshman", "laks@adobe.com", "Adobe");
+
+        var cempl1 = new ContractEmployee("1", "Uma", "uma@adobe.com", "Adobe", "TCS");
+
+        empl1.contractCompany = "TCS";
+
+    </script>
+</body>
+</html>

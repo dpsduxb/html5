@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Custom Directives</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="directives">
+
+    <script>
+        (function () {
+            var app = angular.module("directives", []);
+
+            app.controller("AlertsController", function () {
+
+            });
+
+            //Directives create custom elements
+            //Directives manipulate DOM
+            app.directive("alert", function () {
+                return {
+                    restrict: "EA", //E - Element, A - Attribute, C - CSS Class, M - Comments
+                    //template: "<div> Hi How are you? </div>",
+                    templateUrl: "AngularAlert.html",
+                    transclude: true, //Move the content from view to directive, use ng-transclude or transclusion function in template
+                    scope: {}, //This is we call isolated scope, to give each object unique scope.
+                    //Form a bridge from isolated scope to controller scope and attributes
+                    //Three magical bindings
+                    // @ - Attribute, value is always a string
+                    // = - Model Value, two way binding between isolated scope and Controller scope
+                    // & - Model Function, invoke expression using wrapper function
+                    link: function (scope, element, attributes) {//Link the DOM to an Angular scope
+                        var type = attributes.type; //Element parameter is wrapped by jqlite
+                    }                               //Safe to modify DOM, wire up Events
+
+                };
+
+            });
+        })();
+    </script>
+
+    <div ng-controller="AlertsController">
+        <alert>
+            This is for transclude
+        </alert>
+
+    </div>
+
+    <div alert></div>
+    
+</body>
+</html>

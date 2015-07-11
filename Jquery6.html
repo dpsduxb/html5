@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var str = $("#inputField").val();
+            var finalStr = "<li>" + str + "</li>";
+            $("ul").append("<li>Idli</li>").append(finalStr);
+        });
+    </script>
+    
+    <input type="text" id="inputField" value="Dosa"/>
+
+    <ul>
+        
+    </ul>
+</body>
+</html>

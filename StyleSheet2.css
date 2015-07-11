@@ -1,0 +1,9 @@
+﻿a{
+
+        }
+        .menu_default{
+            color:red;
+        }
+        a.menu_default{
+            color:green;
+        }
