@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="emailId"/>
+
+    <input type="button" value="ADD" onclick="add()"/>
+    <input type="button" value="GET" onclick="get()"/>
+    <input type="button" value="REMOVE" onclick="remove()"/>
+
+    <script>
+        function add() {
+            
+            sessionStorage.setItem("emailId", sessionStorage.getItem("emailId") + "," + emailId.value);
+        }
+
+        function get() {
+            demo.innerHTML = sessionStorage.getItem("emailId");
+        }
+
+        function remove() {
+            sessionStorage.removeItem("emailId");
+        }
+    </script>
+
+    <p id="demo"></p>
+</body>
+</html>
