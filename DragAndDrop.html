@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="dest" style="background-color:black" ondrop="drop(event)" ondragover="dragOver(event)">
+        <h1>dfhsahfd</h1>
+    </div>
+
+    <img id="src1" src="images.jpg" draggable="true"/>
+
+    <img id="src2" src="images.jpg" draggable="false"/>
+
+    <input id="Password1" type="password" />
+
+    <script>
+        function drop(event) {
+            event.preventDefault();
+            dest.appendChild(src1);
+        }
+
+        function dragOver(event) {
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>
