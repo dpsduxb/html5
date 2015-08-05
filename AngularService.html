@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Q Library</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="QApp" ng-controller="customersController">
+    <script>
+        var qmodule = angular.module("QApp", []);
+        qmodule.service("customersService", function ($http, $q) {
+            this.getCustomers = function () {
+                return $http({
+                    method: "GET",
+                    url: "http://www.w3schools.com/angular/customers.php"
+                });
+            }
+        });
+
+        qmodule.controller("customersController", function ($scope, customersService) {
+            customersService.getCustomers()
+                .success(function (data) {
+                    debugger;
+                    console.log(data);
+                    $scope.customers = data.records;
+                }).error(function (data) {
+                    alert(data);
+                });
+        });
+    </script>
+
+    <table>
+        <tr ng-repeat="customer in customers">
+            <td>{{customer.Name}}</td>
+            <td>{{customer.City}}</td>
+        </tr>
+    </table>
+</body>
+</html>

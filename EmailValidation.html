@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+        <input type="email" id="email"/>
+        <input type="submit" onclick="validateEmail()"/>
+    
+    <script>
+        function validateEmail() {
+            var emailId = email.value;
+            console.log(email.value.indexOf("@"));
+            if (email.value.indexOf("@") == -1) {
+                alert("@ symbol ois missing");
+            }
+        }
+    </script>
+</body>
+</html>
